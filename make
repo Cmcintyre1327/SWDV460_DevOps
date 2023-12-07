@@ -1,13 +1,8 @@
-all:  source.exe
+ output: Source.o
+        g++ -std=c++0x -Wall Source.o -o output
 
-hello.exe:  source.h
+ Source.o: Source.cpp
+        g++ -c Source.cpp
 
-      gcc -o source.exe source.h
-
-source.h:  source.cpp
-
-     gcc -c source.cpp
-
-clean:
-
-     rm source.h source.exe
+ clean:
+        rm *.o output
