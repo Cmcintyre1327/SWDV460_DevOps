@@ -1,2 +1,2 @@
-Source: Source.cpp
-    g++ -o Source Source.cpp
+test: test.cpp
+    g++ -o test test.cpp
