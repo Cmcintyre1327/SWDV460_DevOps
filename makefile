@@ -1,7 +1,13 @@
-all: compile link
+all:  Source.exe
 
-compile:
-g++ -c test.cpp
+Source.exe:  Source.o
+
+      gcc -o Source.exe Source.o
+
+Source.o:  Source.c
+
+     gcc -c Source.c
 
 clean:
-rm -f main *.o
+
+     rm Source.o Source.exe
