@@ -1,9 +1,9 @@
-all:      test.exe
+all: test.exe
 
-test.exe:      test.o
+test.exe: test.o
       gcc -o test.exe test.o
 
-test.o:      test.cpp
+test.o: test.cpp
       gcc -c test.cpp
 
 clean:
