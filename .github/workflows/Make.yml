@@ -1,23 +1,13 @@
-name: C/C++ CI
+all:  test.exe
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+test.exe:  test.o
 
-jobs:
-  build:
+      gcc -o test.exe test.o
 
-    runs-on: ubuntu-latest
+test.o:  test.cpp
 
-    steps:
-    - uses: actions/checkout@v3
-    - name: configure
-      run: ./configure
-    - name: make
-      run: make
-    - name: make check
-      run: make check
-    - name: make distcheck
-      run: make distcheck
+     gcc -c test.cpp
+
+clean:
+
+     rm test.o test.exe
