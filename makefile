@@ -1,13 +1,13 @@
-all:  Source.exe
+all:  test.exe
 
-Source.exe:  Source.o
+test.exe:  test.o
 
-      gcc -o Source.exe Source.o
+      gcc -o test.exe test.o
 
-Source.o:  Source.c
+test.o:  test.c
 
-     gcc -c Source.c
+     gcc -c test.c
 
 clean:
 
-     rm Source.o Source.exe
+     rm test.o test.exe
