@@ -1,22 +1,13 @@
-CXXFLAGS = -g -Wall -Werror -std=c++11
-LDLIBS =
+all:  test.exe
 
-PRGM  = project
-SRCS := $(wildcard *.cpp)
-OBJS := $(SRCS:.cpp=.o)
-DEPS := $(OBJS:.o=.d)
+test.exe:  test.o
 
-.PHONY: all clean
+      gcc -o test.exe test.o
 
-all: $(PRGM)
+test.o:  test.c
 
-$(PRGM): $(OBJS)
-	$(CXX) $(OBJS) $(LDLIBS) -o $@
-
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -MMD -MP -c $< -o $@
+     gcc -c test.c
 
 clean:
-	rm -rf $(OBJS) $(DEPS) $(PRGM)
 
--include $(DEPS)
+     rm test.o test.exe
